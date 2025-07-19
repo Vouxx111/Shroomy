@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddt1adrai6gbx"]
+
+[ext_resource type="PackedScene" uid="uid://cavk8truig824" path="res://Assets/Mobs/Enemy Slime_1/Enemy Slime_1.blend" id="1_j3m6p"]
+
+[node name="Evil Slime" type="CharacterBody3D"]
+
+[node name="Enemy Slime_1" parent="." instance=ExtResource("1_j3m6p")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

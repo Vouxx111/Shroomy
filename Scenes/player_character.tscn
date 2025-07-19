@@ -7,10 +7,11 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cmdk4"]
 
 [node name="Player Character" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_qcwfp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.766717, 0.641985, 0, -0.641985, 0.766717, 0, 3.68597, 3.95354)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 6.76732, 3.92674)
 fov = 90.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

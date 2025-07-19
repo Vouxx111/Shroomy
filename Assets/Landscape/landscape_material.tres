@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dspgt8awsdycw"]
+
+[ext_resource type="Texture2D" uid="uid://dlf8w7ac7hxr7" path="res://Assets/Landscape/Textures/Landscape Texture Bake.png" id="1_18tt6"]
+[ext_resource type="Texture2D" uid="uid://dfly5ile2rdty" path="res://Assets/Landscape/Textures/Landscape Normal Bake.png" id="2_pgoff"]
+
+[resource]
+albedo_texture = ExtResource("1_18tt6")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_pgoff")

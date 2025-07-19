@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cavk8truig824"
-path="res://.godot/imported/Enemy Slime_1.blend-61d374292237bb599217795c35c27706.scn"
+uid="uid://beqt5iqfw5e7s"
+path="res://.godot/imported/Landscape.blend-70a2fd361d1afc876d9d7106f626d88e.scn"
 
 [deps]
 
-source_file="res://Assets/Mobs/Enemy Slime_1/Enemy Slime_1.blend"
-dest_files=["res://.godot/imported/Enemy Slime_1.blend-61d374292237bb599217795c35c27706.scn"]
+source_file="res://Assets/Landscape/Landscape.blend"
+dest_files=["res://.godot/imported/Landscape.blend-70a2fd361d1afc876d9d7106f626d88e.scn"]
 
 [params]
 
@@ -33,8 +33,14 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://dspgt8awsdycw"
+}
+},
 "nodes": {
-"PATH:Slime Outer": {
+"PATH:Landscape": {
 "generate/physics": true
 }
 }

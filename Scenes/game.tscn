@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://2qg18w37xamo"]
+[gd_scene load_steps=7 format=3 uid="uid://2qg18w37xamo"]
 
 [ext_resource type="PackedScene" uid="uid://c6iry2ow2l8ak" path="res://Scenes/player_character.tscn" id="1_ebmjs"]
-[ext_resource type="PackedScene" uid="uid://cavk8truig824" path="res://Assets/Mobs/Enemy Slime_1/Enemy Slime_1.blend" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://ddt1adrai6gbx" path="res://Scenes/evil_slime.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://beqt5iqfw5e7s" path="res://Assets/Landscape/Landscape.blend" id="3_wrm1d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ebmjs"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -26,15 +27,11 @@ environment = SubResource("Environment_wrm1d")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(68.2889, 0, 0, 0, 0.99832, 0, 0, 0, 68.2889, 0, 0, 0)
-use_collision = true
-size = Vector3(1, 0.1, 1)
-
 [node name="Player Character" parent="." instance=ExtResource("1_ebmjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17297, 0.899154, -0.373643)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Evil Slime" parent="." instance=ExtResource("2_qxrlw")]
+transform = Transform3D(1.00893, 0, 0, 0, 1.00893, 0, 0, 0, 1.00893, -0.231671, 0.0499161, -2.9014)
 
-[node name="Enemy Slime_1" parent="." instance=ExtResource("2_qxrlw")]
-transform = Transform3D(1.00893, 0, 0, 0, 1.00893, 0, 0, 0, 1.00893, -0.58485, 0.0499161, -9.07221)
+[node name="Landscape2" parent="." instance=ExtResource("3_wrm1d")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
