@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://2qg18w37xamo"]
+[gd_scene load_steps=6 format=3 uid="uid://2qg18w37xamo"]
 
 [ext_resource type="PackedScene" uid="uid://c6iry2ow2l8ak" path="res://Scenes/player_character.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://cavk8truig824" path="res://Assets/Mobs/Enemy Slime_1/Enemy Slime_1.blend" id="2_qxrlw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ebmjs"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -32,3 +33,8 @@ size = Vector3(1, 0.1, 1)
 
 [node name="Player Character" parent="." instance=ExtResource("1_ebmjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17297, 0.899154, -0.373643)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Enemy Slime_1" parent="." instance=ExtResource("2_qxrlw")]
+transform = Transform3D(1.00893, 0, 0, 0, 1.00893, 0, 0, 0, 1.00893, -0.58485, 0.0499161, -9.07221)
