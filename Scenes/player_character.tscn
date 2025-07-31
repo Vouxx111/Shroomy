@@ -18,5 +18,10 @@ fov = 90.0
 [node name="Player Character Model" parent="." instance=ExtResource("2_cmdk4")]
 transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0, -0.6, 0.01)
 
+[node name="AttackRay" type="RayCast3D" parent="Player Character Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.77621, 0)
+target_position = Vector3(3, 0, 0)
+debug_shape_custom_color = Color(0.566421, 1.00593e-05, 0.398895, 1)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_cmdk4")

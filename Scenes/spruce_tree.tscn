@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkto5qoc4auo1"]
+
+[ext_resource type="Script" uid="uid://cih5q2v07fhog" path="res://Scripts/big_rock.gd" id="1_r2sqw"]
+[ext_resource type="PackedScene" uid="uid://dftgi7pkbwkr7" path="res://Scenes/health_system.tscn" id="2_ttxgk"]
+[ext_resource type="PackedScene" uid="uid://c224xro7nx4sj" path="res://Assets/Minables/Spruce Tree/spruce tree.blend" id="3_r2sqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dg6tv"]
+size = Vector3(0.429932, 4.27518, 0.413086)
+
+[sub_resource type="Animation" id="Animation_4bsu4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ca2ir"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.2, 0.2, 0.2)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4bsu4"]
+_data = {
+&"RESET": SubResource("Animation_4bsu4"),
+&"death": SubResource("Animation_ca2ir")
+}
+
+[node name="Big Rock" type="RigidBody3D"]
+script = ExtResource("1_r2sqw")
+
+[node name="Health System" parent="." instance=ExtResource("2_ttxgk")]
+MAXHEALTH = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93409, 0)
+shape = SubResource("BoxShape3D_dg6tv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4bsu4")
+}
+
+[node name="spruce tree" parent="." instance=ExtResource("3_r2sqw")]
+
+[connection signal="death" from="Health System" to="." method="_on_health_system_death"]

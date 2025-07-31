@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://2qg18w37xamo"]
+[gd_scene load_steps=9 format=3 uid="uid://2qg18w37xamo"]
 
 [ext_resource type="PackedScene" uid="uid://c6iry2ow2l8ak" path="res://Scenes/player_character.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://ddt1adrai6gbx" path="res://Scenes/evil_slime.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://beqt5iqfw5e7s" path="res://Assets/Landscape/Landscape.blend" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://cboh3smutn77o" path="res://Scenes/big_rock.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://dkto5qoc4auo1" path="res://Scenes/spruce_tree.tscn" id="5_wowpa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ebmjs"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -28,10 +30,16 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Player Character" parent="." instance=ExtResource("1_ebmjs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17297, 0.899154, -0.373643)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17297, 0.638266, -0.373643)
 
 [node name="Evil Slime" parent="." instance=ExtResource("2_qxrlw")]
 transform = Transform3D(1.00893, 0, 0, 0, 1.00893, 0, 0, 0, 1.00893, -0.231671, 0.0499161, -2.9014)
 
-[node name="Landscape2" parent="." instance=ExtResource("3_wrm1d")]
+[node name="Landscape" parent="." instance=ExtResource("3_wrm1d")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="Big Rock" parent="." instance=ExtResource("4_3dryh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01786, -0.0034693, 1.00893)
+
+[node name="Big Rock2" parent="." instance=ExtResource("5_wowpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20859, 0.205317, -3.80284)

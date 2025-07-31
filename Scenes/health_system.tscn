@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dftgi7pkbwkr7"]
+
+[ext_resource type="Script" uid="uid://0tiq85b21xom" path="res://Scripts/health_system.gd" id="1_qmw02"]
+
+[node name="Health System" type="Node"]
+script = ExtResource("1_qmw02")
+
+[node name="Damage Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Damage Timer" to="." method="_on_damage_timer_timeout"]
